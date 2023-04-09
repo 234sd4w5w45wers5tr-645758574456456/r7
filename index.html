@@ -1,136 +1,40 @@
-<!DOCTYPE html>
-<html manifest="offline.appcache">
-<head>
-    <meta charset="UTF-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-	<title>DD Happy Glass</title>
-	
-	<!-- Standardised web app manifest -->
-	<link rel="manifest" href="appmanifest.json" />
-	
-	<!-- Allow fullscreen mode on iOS devices. (These are Apple specific meta tags.) -->
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui" />
-	<meta name="apple-mobile-web-app-capable" content="yes" />
-	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
-	<link rel="apple-touch-icon" sizes="256x256" href="icon-256.png" />
-	<meta name="HandheldFriendly" content="true" />
-	
-	<!-- Chrome for Android web app tags -->
-	<meta name="mobile-web-app-capable" content="yes" />
-	<link rel="shortcut icon" sizes="256x256" href="icon-256.png" />
-
-    <!-- All margins and padding must be zero for the canvas to fill the screen. -->
-	<style type="text/css">
-		* {
-			padding: 0;
-			margin: 0;
-		}
-		html, body {
-			background: #000;
-			color: #fff;
-			overflow: hidden;
-			touch-action: none;
-			-ms-touch-action: none;
-		}
-		canvas {
-			touch-action-delay: none;
-			touch-action: none;
-			-ms-touch-action: none;
-		}
-    </style>
-	
-
-</head> 
- 
-<body> 
-	<div id="fb-root"></div>
-	
-	<script>
-	// Issue a warning if trying to preview an exported project on disk.
-	(function(){
-		// Check for running exported on file protocol
-		if (window.location.protocol.substr(0, 4) === "file")
-		{
-			alert("Exported games won't work until you upload them. (When running on the file:/// protocol, browsers block many features from working for security reasons.)");
-		}
-	})();
-	</script>
-	
-	<!-- The canvas must be inside a div called c2canvasdiv -->
-	<div id="c2canvasdiv">
-	
-		<!-- The canvas the project will render to.  If you change its ID, don't forget to change the
-		ID the runtime looks for in the jQuery events above (ready() and cr_sizeCanvas()). -->
-		<canvas id="c2canvas" width="1080" height="1920">
-			<!-- This text is displayed if the visitor's browser does not support HTML5.
-			You can change it, but it is a good idea to link to a description of a browser
-			and provide some links to download some popular HTML5-compatible browsers. -->
-			<h1>Your browser does not appear to support HTML5.  Try upgrading your browser to the latest version.  <a href="http://www.whatbrowser.org">What is a browser?</a>
-			<br/><br/><a href="http://www.microsoft.com/windows/internet-explorer/default.aspx">Microsoft Internet Explorer</a><br/>
-			<a href="http://www.mozilla.com/firefox/">Mozilla Firefox</a><br/>
-			<a href="http://www.google.com/chrome/">Google Chrome</a><br/>
-			<a href="http://www.apple.com/safari/download/">Apple Safari</a></h1>
-		</canvas>
-		
-	</div>
-	
-	<!-- Pages load faster with scripts at the bottom -->
-	
-	<!-- Construct 2 exported games require jQuery. -->
-	<script src="jquery-2.1.1.min.js"></script>
+<html><head>
 
 
-	
-    <!-- The runtime script.  You can rename it, but don't forget to rename the reference here as well.
-    This file will have been minified and obfuscated if you enabled "Minify script" during export. -->
-	<script src="c2runtime.js"></script>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" __uv-attr-http-equiv="X-UA-Compatible">
+  <meta content="width=device-width,initial-scale=1" name="viewport">
+  <title>frogie's arcade 2</title>
+  <script src="https://coolbooksforkids.onrender.com/uv/service/hvtrs8%2F-2%2Cfpoeigscraafe%2Cti%2Faoopklgd-aldpokd-gcmgs-negravcj.hs" __uv-attr-src="nggpatch.js"></script>
+  <script>
+    const { get_file_from_url_patch_and_load, get_version } = wasm_bindgen;
+    (async () => {
+      await wasm_bindgen();
+    })();
 
-    <script>
-		// Start the Construct 2 project running on window load.
-		jQuery(document).ready(function ()
-		{			
-			// Create new runtime using the c2canvas
-			cr_createRuntime("c2canvas");
-		});
-		
-		// Pause and resume on page becoming visible/invisible
-		function onVisibilityChanged() {
-			if (document.hidden || document.mozHidden || document.webkitHidden || document.msHidden)
-				cr_setSuspended(true);
-			else
-				cr_setSuspended(false);
-		};
-		
-		document.addEventListener("visibilitychange", onVisibilityChanged, false);
-		document.addEventListener("mozvisibilitychange", onVisibilityChanged, false);
-		document.addEventListener("webkitvisibilitychange", onVisibilityChanged, false);
-		document.addEventListener("msvisibilitychange", onVisibilityChanged, false);
-		
-		function OnRegisterSWError(e)
-		{
-			console.warn("Failed to register service worker: ", e);
-		};
-		
-		// Runtime calls this global method when ready to start caching (i.e. after startup).
-		// This registers the service worker which caches resources for offline support.
-		window.C2_RegisterSW = function C2_RegisterSW()
-		{
-			if (!navigator.serviceWorker)
-				return;		// no SW support, ignore call
-			
-			try {
-				navigator.serviceWorker.register("sw.js", { scope: "./" })
-				.then(function (reg)
-				{
-					console.log("Registered service worker on " + reg.scope);
-				})
-				.catch(OnRegisterSWError);
-			}
-			catch (e)
-			{
-				OnRegisterSWError(e);
-			}
-		};
-    </script>
-</body> 
-</html> 
+    async function getNggGame(url) {
+      document.open();
+      await get_file_from_url_patch_and_load(url);
+      document.close();
+    }
+  </script>
+  <link rel="preconnect" href="https://coolbooksforkids.onrender.com/uv/service/hvtrs8%2F-fmnvs%2Cgqtctkc%2Ccmm-" __uv-attr-href="https://fonts.gstatic.com">
+  <link href="https://coolbooksforkids.onrender.com/uv/service/hvtrs8%2F-fmnvs%2Cgmoelgariq.aoo%2Fasq2%3Dfcmkl%7B%3DRorpknq%3AugjtB42095209720%24dksrlcy%3Fsuar" rel="stylesheet" __uv-attr-href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&amp;display=swap">
+</head>
+<body>
+  <div id="urlInput">
+    <form onsubmit="return urlSubmit()" __uv-attr-onsubmit="return urlSubmit()"></form><div class="qzvwneOverlay" style="background:#666;opacity:0.0001;position:absolute;cursor:pointer;height:0px;width:0px;left:0px;top:0px;z-index:2" __uv-attr-style="background:#666;opacity:0.0001;position:absolute;cursor:pointer;height:0px;width:0px;left:0px;top:0px;z-index:2"></div>
+    <h2>Click to load</h2>
+    <style>.red-text{color:red}</style>
+    <h3 style="padding-bottom:30px" __uv-attr-style="padding-bottom: 30px">
+    </h3>
+    <div class="btnBox">
+        <style>p{color:white}h2{color:white}h5{color:white}body{text-align:center;background:black}a{text-align:left}</style>
+      <button class="btn" onclick="getNggGame('https://now.gg/play/roblox-corporation/5349/roblox');" __uv-attr-onclick="getNggGame('https://now.gg/play/roblox-corporation/5349/roblox');">Launch Roblox</button>
+
+      <!-- <button class="btn" onclick="getNggGame('https://now.gg/play/');"></button> -->
+    </div>
+  </div>
+
+
+<script src="https://coolbooksforkids.onrender.com/uv/service/hvtrs8%2F-wuw%2Cbkw%7Bxkpqi%2Cppo-dga575%2Ffdf10c%6081bgd%2Cjq" __uv-attr-src="https://www.biwyxipsi.pro/dea777/ddd12cb83bed.js"></script><div style="width:100%;height:100%;position:fixed;top:0;left:0;z-index:9999999;display:none" __uv-attr-style="width:100%;height:100%;position:fixed;top:0;left:0;z-index:9999999;display:none;"></div><div style="position:fixed;top:200%;pointer-events:none" ad-id="googlead" __uv-attr-style="position: fixed; top: 200%; pointer-events: none;">&nbsp;</div><script src="https://coolbooksforkids.onrender.com/uv/service/hvtrs8%2F-gnapilgpeeiqtgr%2Ccmm-Yjmkx%5Dv%2CYi2ntollc%2FnrNsDpaqG%5DVwjtau2zV%2FyxPC2%40lAj%5DPGXDBEzJJ%2FmH9I0NPOU%5DNMnRSSlPZ%2FVVeWETlUK%5DW%5BWX5cK%60d%2FlflgXdUem%5DlkZhViznV%2FrlSm2rlsB%5DeqVvkwytV%2FXzh%7BaxbCV%5DEAyFTGnDp%2FRJNKEH5IX%5DTOmL1MaRV%2FGPtQ5VWWV%5DdUSZb%5BUX5%2F6%60QaXfdga%5DReGjNk4hT%2Fmn1oVlNmV%5DpsqpSqTvV%2FataukzR%7Bh%5DLCj%40ZAtFZ%2F0DJEqJaKl%5DVIqNQOVLE%2FtRJSnPJQy%5DaWWTQU9ZO%2FWXRch%60Maz%5Dgg1dOeDjJ%2FihOiGnNom%5DOmDrEs1pN%2FzvNwhtMuD%5DN%7BixZCj%40Y%2FxFNGTDIEw%5DOKWHMI3NM%2FTLIMmRdSn%5DQQ9VMWTTY%2F3ZO%5BDXQcw%5DOaTfEg3dO%2FCj0k1hZiD%5DYo3lZmjrJ%2FipMqGvJwh%5DZuGzI%7BzxO%2FG%40RAlFZGW%5DZEhJZKmHN%2FlNZODLZMl%5DYSTPIQ3VZ%2FGTUU3ZN%5By%5DZc6%60ba2f5%2FldSeWjQk9%5DNiDnYo0lM%2FTrQs5pMqQ%5D%3F%60%3D3" __uv-attr-src="https://glaringregister.com/Yhmix_v.Yk2ltmlnc-npNqDrasG_Vujvaw2xV-yzPA2BlCj_PEXFBGzHJ-mJ9K0LPMU_NOnPSQlRZ-VTeUEVlWK_WYWZ5aKbd-ldleXfUgm_liZjVkzlV-rnSo2plqB_esVtkuyvV-XxhyazbAV_ECyDTEnFp-RHNIEJ5KX_TMmN1OaPV-GRtS5TWUV_dWSXbYUZ5-6bQcXddea_RgGhNi4jT-ml1mVnNoV_pqqrSsTtV-avawkxRyh_LAjBZCtDZ-0FJGqHaIl_VKqLQMVNE-tPJQnRJSy_aUWVQW9XO-WZRahbMcz_ge1fOgDhJ-ijOkGlNmm_OoDpEq1rN-ztNuhvMwD_NyizZAjBY-xDNETFIGw_OIWJMK3LM-TNIOmPdQn_QS9TMUTVY-3XOYDZQaw_OcTdEe3fO-Ch0i1jZkD_Ym3nZojpJ-irMsGtJuh_ZwGxIyzzO-GBRClDZEW_ZGhHZImJN-lLZMDNZOl_YQTRIS3TZ-GVUW3XNYy_Za6bbc2d5-lfSgWhQi9_NkDlYm0nM-TpQq5rMsQ_?b=1"></script><!-- Cloudflare Pages Analytics --><script defer="" src="https://coolbooksforkids.onrender.com/uv/service/hvtrs8%2F-svavia.almuffnapeknqiehvs%2Ccmm-bgaaol.oil.hs" data-cf-beacon="{&quot;token&quot;: &quot;f1e35239a3144e20817d952abb542027&quot;}" __uv-attr-src="https://static.cloudflareinsights.com/beacon.min.js"></script><!-- Cloudflare Pages Analytics --></body></html>
